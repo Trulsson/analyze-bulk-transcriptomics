@@ -1,0 +1,14 @@
+interface:
+  display_name: Bulk Transcriptomics Analysis
+  short_description: Reproducible RNA-seq QC, PCA, and DE analysis
+  default_prompt: Use $analyze-bulk-transcriptomics to analyze my bulk RNA-seq count
+    matrix with reproducible filtering, normalization, QC, PCA, and differential expression.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
