@@ -39,7 +39,7 @@ This skill does not perform FASTQ alignment or quantification and is not intende
 Clone the repository into your agent’s skills directory:
 
 ```bash
-git clone https://github.com/<OWNER>/<REPOSITORY>.git \
+git clone https://github.com/Trulsson/analyze-bulk-transcriptomics.git \
   <SKILLS_DIRECTORY>/analyze-bulk-transcriptomics
 ```
 
