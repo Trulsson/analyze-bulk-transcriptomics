@@ -51,7 +51,7 @@ Restart the agent or begin a new session to load the skill.
 |-|-|
 |Low-count filter|Count ≥10 in at least 3 samples|
 |Biotype|Protein-coding|
-|QC normalization|DESeq2 VST with `use\_design=False`|
+|QC normalization|DESeq2 VST with `use_design=False`|
 |PCA|500 most variable genes, standardized per gene|
 |DE model|PyDESeq2 0.5.4, parametric fit|
 |Cook's refitting|Enabled|
@@ -66,25 +66,25 @@ Restart the agent or begin a new session to load the skill.
 Each run creates:
 
 ```text
-transcriptomics\_results/
+transcriptomics_results/
 ├── figures/
-│   ├── library\_sizes.{pdf,png}
-│   ├── detected\_genes.{pdf,png}
-│   ├── sample\_correlation.{pdf,png}
+│   ├── library_sizes.{pdf,png}
+│   ├── detected_genes.{pdf,png}
+│   ├── sample_correlation.{pdf,png}
 │   ├── pca.{pdf,png}
-│   ├── volcano\_<contrast>.{pdf,png}
-│   └── hallmark\_<direction>\_<contrast>\*.{pdf,png}
+│   ├── volcano_<contrast>.{pdf,png}
+│   └── hallmark_<direction>_<contrast>*.{pdf,png}
 ├── tables/
-│   ├── filtered\_raw\_counts.csv
-│   ├── normalized\_vst.csv
-│   ├── pca\_scores.csv
-│   ├── pca\_genes.csv
-│   ├── de\_<contrast>\_annotated.csv
-│   ├── hallmark\_<direction>\_<contrast>\_all.csv
-│   └── hallmark\_<direction>\_<contrast>\_top10.csv
+│   ├── filtered_raw_counts.csv
+│   ├── normalized_vst.csv
+│   ├── pca_scores.csv
+│   ├── pca_genes.csv
+│   ├── de_<contrast>_annotated.csv
+│   ├── hallmark_<direction>_<contrast>_all.csv
+│   └── hallmark_<direction>_<contrast>_top10.csv
 ├── methods.txt
-├── run\_summary.json
-└── sample\_alignment.json
+├── run_summary.json
+└── sample_alignment.json
 ```
 
 The volcano y-axis shows `−log10(p-value)`, while point coloring, labels, and significance calls use adjusted p-values. Pathway plots show `−log10(adjusted p-value)`, color bars by FDR status, and mark adjusted p = 0.05 with a dashed line.
@@ -100,13 +100,13 @@ The volcano y-axis shows `−log10(p-value)`, while point coloring, labels, and 
 
 ## Reproducibility
 
-The workflow records package versions and all non-default configuration choices. Numerical results are deterministic under the same inputs, code, configuration, and package versions. PDF files can differ at the byte level because they contain creation timestamps, even when they render identically. GSEApy may also return pathway-member gene strings in a different order without changing pathway membership or statistics.
+The workflow records package versions and all non-default configuration choices. Numerical results are deterministic under the same inputs, code, configuration, and package versions.
 
 ## Repository structure
 
 * [`SKILL.md`](SKILL.md): Codex workflow and guardrails.
-* [`scripts/run\_transcriptomics.py`](scripts/run_transcriptomics.py): configuration-driven runner.
+* [`scripts/run_transcriptomics.py`](scripts/run_transcriptomics.py): configuration-driven runner.
 * [`scripts/transcriptomics.py`](scripts/transcriptomics.py): reusable analysis functions.
 * [`references/`](references/): configuration and method documentation.
-* `ensemble\_mappings\_\*.pkl`: bundled human Ensembl annotations.
+* `ensemble_mappings_*.pkl`: bundled human Ensembl annotations.
 
